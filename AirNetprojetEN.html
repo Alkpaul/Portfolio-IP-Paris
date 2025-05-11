@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueilEN.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Homepage</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                •   Best portfolio in the world!!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   • 
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="AirNetprojetEN.html">EN</a>
+            <a href="AirNetprojet.html">FR</a>
+        </div>
+    </header>
+    <main class="project-container">
+        <h1 class="project-title">Project: AirNet</h1>
+        
+        <!-- Presentation Section -->
+        <section class="project-section">
+            <h2>Project Goal:</h2>
+            <div class="text-content">
+                <p>AirNet is a personal project that intelligently pools the mobile connections of 5 to 8 nearby users to bypass cellular network saturation. The devices form a local mesh network, compress and encrypt data, and then dynamically select the phone with the best bandwidth to collectively relay requests to the carrier.</p>
+            </div>
+        </section>
+
+        <!-- Media Gallery -->
+        <section class="project-section">
+            <h2>Solution Overview File</h2>
+            <div class="media-grid">
+                <div class="pdf-container">
+                    <iframe src="progillu/AirNetpdfFR.pdf" class="embedded-pdf" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm Section -->
+        <section class="project-section">
+            <h2>Algorithmic Structure</h2>
+            <div class="pseudocode">
+                <pre>
+# Constants
+MAX_PHONES = 8  # Maximum number of phones in the mesh network
+LOCAL_PROTOCOL = "Bluetooth"  # Connection protocol (Wi-Fi Direct, Bluetooth, etc.)
+
+# Mesh network initialization
+mesh_network = initialize_mesh_network(LOCAL_PROTOCOL)
+
+# Main loop while AirNet is active
+while AirNet.is_active():
+
+    # Handling new phones
+    if new_phone_detected():
+        if mesh_network.size() < MAX_PHONES:
+            add_phone_to_network(new_phone)
+            synchronize_network_state()
+        else:
+            reject_new_phone()  # Network full
+
+    # Handling outgoing data
+    for phone in mesh_network.phones:
+        if phone.has_data_to_send():
+            # Split the data into chunks based on number of phones
+            chunks = split_data(phone.data, mesh_network.size())
+
+            # Distribute each chunk to a phone in the network
+            for chunk, target in assign(chunks, mesh_network.phones):
+                send_chunk_to_phone(chunk, target)
+
+                # Each phone relays its chunk to the cellular network
+                if target.has_chunk():
+                    response = target.send_to_cellular_network(target.chunk)
+                    target.store_response(response)
+
+            # Gather responses and reconstruct the data
+            responses = collect_responses_from_mesh()
+            reconstructed_data = reassemble_data(responses)
+
+            # Return the data to the original phone
+            send_to_original_phone(reconstructed_data, phone)
+
+    # Handling phone departures
+    if phone_leaves_network():
+        remove_phone_from_network(departing_phone)
+        synchronize_network_state()
+
+    # Periodic maintenance
+    if time_to_check_network():
+        check_network_connectivity()
+        optimize_routing_paths()
+                </pre>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>© 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueil.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Page d'accueil</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                  •   Le meilleur portfolio au monde !!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="accueilEN.html">EN</a>
+            <a href="accueil.html">FR</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="bubble-container">
+            <div class="bubble large" onclick="ouvrirPopup()" style="cursor: pointer;">
+                <a href="javascript:void(0)">
+                    <img src="CV_photo.jpg" alt="Mon CV">
+                    Mon CV
+                </a>
+            </div>
+            <div class="small-bubbles-container">
+                <div class="small-bubbles-row">
+                    <div class="bubble small">
+                        <a href="menuprojets.html">
+                            <img src="programmation.jpg" alt="Projet Programmation">
+                            Projets de Programmation
+                        </a>
+                    </div>
+                    <div class="bubble small" onclick="ouvrirPopupProjet()" style="cursor: pointer;">
+                        <a href="javascript:void(0)">
+                            <img src="progillu/avenirpro.jpg" alt="Projet Professionel">
+                            Projets Professionnels
+                        </a>
+                    </div>
+                </div>
+                <div class="bubble minecraft">
+                    <a href="minecraftpage.html">
+                        <img src="minecraftimageaccueil.png" alt="Projet Minecraft">
+                        Projet Minecraft
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup CV -->
+        <div id="popup" class="popup">
+            <div class="popup-contenu">
+                <span class="fermer" onclick="fermerPopup()">×</span>
+                <h2>Mon CV</h2>
+                <iframe src="Paul_BRIAND_CV (5).pdf" class="cv-pdf" title="CV Paul Briand"></iframe>
+            </div>
+        </div>
+
+        <!-- Popup Projet Professionnel -->
+        <div id="popup-projet" class="popup">
+            <div class="popup-contenu">
+                <span class="fermer" onclick="fermerPopupProjet()">×</span>
+                <h2>Mon Projet Professionnel</h2>
+                <iframe src="Projet_pro_portfolio_IPPARIS- Paul.pdf" class="cv-pdf" title="Projet Professionnel"></iframe>
+            </div>
+        </div>
+
+        <div class="expandable-container">
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpandable(this)">
+                    <h2>Mes motivations <span class="indicator">▼</span></h2>
+                </div>
+                <div class="expandable-content">
+                    <p>
+Le but de cette page est simple : vous montrer, de façon plus personnelle que dans une lettre de motivation, pourquoi je me tourne vers le Master Data & IA de l’IP Paris.
+Je me passionne pour l’intelligence artificielle, et voudrais m'y spécialiser, en particulier pour son application aux systèmes embarqués et à la robotique. J’ai soif d’apprendre, j’aime relever des défis, et suis déterminé à aller loin.
+</p>
+
+<p>
+Pour vous décrire mon parcours, assez atypique :
+</p>
+
+<p>
+J’ai commencé par un bachelor en cybersécurité, que j’ai quitté parce que je ne m’y retrouvais pas. Pas assez stimulant et trop rigide. J’ai donc fait le choix de reprendre en prépa intégrée (rentrée décalée), pour prendre le temps d’explorer ce que j’aimais vraiment en ingénierie.
+Les mathématiques appliquées et le codage se sont alors présentés comme étant les deux unités d’enseignement dans lesquelles je m’illustrais vraiment.
+</p>
+
+<p>
+C’est dans ces domaines que je me sens le plus à ma place aujourd’hui. Et mes notes le montrent : une évolution constante depuis ma rentrée décalée, 12 de moyenne, puis 13, puis 15 à l’heure actuelle. Une progression que je dois à ma curiosité, à mes bons professeurs, mais aussi à l’envie de me dépasser et à ma soif d’apprendre.
+</p>
+
+<p>
+Je pense que l’IP Paris recherche des étudiants au parcours atypique, à l’esprit créatif et original, des personnes capables d’apporter quelque chose en plus : de l’implication, des idées, une personnalité. C’est ce que j’aimerais vous proposer.
+Dans mon imaginaire, l’IP Paris est un endroit où les idées circulent vite, où on aime les profils curieux et qui sortent du cadre. C’est ce genre d’endroit que je cherche. Et c’est dans ce genre d’environnement que je me sens prêt à m’investir pleinement.
+</p>
+
+<p>
+Ainsi, je suis convaincu que l’Institut Polytechnique peut me donner les moyens d’aller très loin.
+Je suis prêt à m’engager avec enthousiasme dans cette aventure.
+</p>
+
+<p>
+Merci sincèrement d’avoir pris le temps de parcourir ce portfolio, en complément de ma lettre de motivation.
+</p>
+                
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        function ouvrirPopup() {
+            document.getElementById('popup').classList.add('active');
+        }
+
+        function fermerPopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+
+        function ouvrirPopupProjet() {
+            document.getElementById('popup-projet').classList.add('active');
+        }
+
+        function fermerPopupProjet() {
+            document.getElementById('popup-projet').classList.remove('active');
+        }
+
+        // Fermer les popups en cliquant en dehors
+        window.onclick = function(event) {
+            const popupCV = document.getElementById('popup');
+            const popupProjet = document.getElementById('popup-projet');
+            if (event.target === popupCV) {
+                fermerPopup();
+            } else if (event.target === popupProjet) {
+                fermerPopupProjet();
+            }
+        }
+
+        function toggleExpandable(element) {
+            const container = element.closest('.expandable');
+            container.classList.toggle('active');
+        }
+
+        // Optionnel : Fermer en cliquant en dehors
+        document.addEventListener('click', function(event) {
+            const expandables = document.querySelectorAll('.expandable');
+            expandables.forEach(expandable => {
+                if (!expandable.contains(event.target)) {
+                    expandable.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

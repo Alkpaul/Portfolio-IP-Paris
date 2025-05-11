@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueil.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Home Page</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                  •   Best portfolio in the world!!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="GamePineEN.html">EN</a>
+            <a href="GamePine.html">FR</a>
+        </div>
+    </header>
+    <main class="project-container">
+        <h1 class="project-title">Project: Game&Pine — Page Under Construction</h1>
+        
+        <!-- Project Purpose Section -->
+        <section class="project-section">
+            <h2>Project Objective:</h2>
+            <div class="text-content">
+                <p>This academic project is based on an interactive web application, connected in real time to a local database. Its goal is to assess and connect board game enthusiasts. Using a proprietary algorithm, the app compares each user's preferences to the data in our catalog to suggest targeted matches, much like a playful matchmaking platform. All features are fully functional: creation and management of multiple accounts, an admin interface to oversee users and content, game addition/removal, comment moderation, and a like/dislike system. By combining these elements, the application offers a smooth and personalized experience, making it easier to discover like-minded gaming partners.</p>
+            </div>
+        </section>
+
+        <!-- Media Gallery -->
+        <section class="project-section">
+            <h2>Visual Demonstration</h2>
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="progillu/chantier en cours.jpg" alt="Code illustration">
+                </div>
+                <div class="media-item">
+                    <img src="progillu/chantier en cours.jpg" alt="Code illustration">
+                </div>
+                <div class="media-item">
+                    <img src="progillu/chantier en cours.jpg" alt="Code illustration">
+                </div>
+                <div class="media-item video-wrapper">
+                    <video controls muted poster="progillu/2025-05-07 15-49-15.mkv">
+                        <source src="progillu/2025-05-07 15-49-15.mkv">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm Section -->
+        <section class="project-section">
+            <h2>Algorithm Structure</h2>
+            <div class="pseudocode">
+                <pre>
+Function match_users(userA_id, userB_id)
+// 1. Connect to the database
+conn ← open_DB_connection(host, user, password, DB_name)
+                
+// 2. Retrieve liked games for each user
+gamesA ← execute_query(
+    conn,
+    "SELECT game_id FROM preferences WHERE user_id = ?", userA_id
+)
+gamesB ← execute_query(
+    conn,
+    "SELECT game_id FROM preferences WHERE user_id = ?", userB_id
+)
+                
+// 3. Compute intersection
+common_games ← INTERSECT(gamesA, gamesB)
+                
+// 4. Match decision
+If common_games is not empty
+    display("Match found! Shared games:", common_games)
+Else
+    display("No match: no shared games.")
+End If
+                
+// 5. Close the connection
+close_DB_connection(conn)
+End Function
+                </pre>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>© 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

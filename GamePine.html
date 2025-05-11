@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueil.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Page d'accueil</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                  •   Le meilleur portfolio au monde !!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="GamePineEN.html">EN</a>
+            <a href="GamePine.html">FR</a>
+        </div>
+    </header>
+    <main class="project-container">
+        <h1 class="project-title">Projet : Game&Pine  — Page en cours de construction</h1>
+        
+        <!-- Section Présentation -->
+        <section class="project-section">
+            <h2>Le but du projet :</h2>
+            <div class="text-content">
+                <p>Ce projet académique repose sur une application web interactive, reliée en temps réel à une base de données locale, dont l’objectif est d’évaluer et de mettre en relation les amateurs de jeux de société. Grâce à un algorithme propriétaire, l’application compare les préférences de chaque utilisateur aux données de notre catalogue pour proposer des mises en relation ciblées, à la manière d’une plateforme de rencontres ludiques. L’ensemble des fonctionnalités est opérationnel : création et gestion de comptes multiples, interface d’administration pour superviser utilisateurs et contenus, ajout et suppression de jeux, modération de commentaires ainsi que le système de “like/dislike”. En combinant ces éléments, l’application offre une expérience personnalisée et fluide, facilitant la découverte de partenaires de jeu partageant les mêmes affinités.</p>
+            </div>
+        </section>
+
+        <!-- Galerie Média -->
+        <section class="project-section">
+            <h2>Démonstration Visuelle</h2>
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="progillu/chantier en cours.jpg" alt="Illustration du code">
+                </div>
+                <div class="media-item">
+                    <img src="progillu/chantier en cours.jpg" alt="Illustration du code">
+                </div>
+                <div class="media-item">
+                    <img src="progillu/chantier en cours.jpg" alt="Illustration du code">
+                </div>
+                <div class="media-item video-wrapper">
+                    <video controls muted poster="progillu/2025-05-07 15-49-15.mkv">
+                        <source src="progillu/2025-05-07 15-49-15.mkv">
+                        Votre navigateur ne supporte pas les vidéos HTML5.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Algorithme -->
+        <section class="project-section">
+            <h2>Structure Algorithmique</h2>
+            <div class="pseudocode">
+                <pre>
+Fonction match_utilisateurs(userA_id, userB_id)
+// 1. Connexion à la base
+conn ← ouvrir_connexion_BDD(hôte, utilisateur, mot_de_passe, nom_BDD)
+                
+// 2. Récupération des jeux “likés” par chaque utilisateur
+jeuxA ← exécuter_requête(
+    conn,
+    "SELECT jeu_id FROM préférences WHERE user_id = ?", userA_id
+)
+jeuxB ← exécuter_requête(
+    conn,
+    "SELECT jeu_id FROM préférences WHERE user_id = ?", userB_id
+)
+                
+// 3. Calcul de l’intersection
+jeux_communs ← INTERSECTION(jeuxA, jeuxB)
+                
+// 4. Décision de match
+Si jeux_communs n’est pas vide
+    afficher("Match trouvé ! Jeux en commun :", jeux_communs)
+Sinon
+    afficher("Pas de match : aucun jeu partagé.")
+Fin Si
+                
+// 5. Fermeture de la connexion
+fermer_connexion_BDD(conn)
+Fin Fonction
+                  
+                </pre>
+            </div>
+        </section>
+
+    </main>
+        <footer>
+            <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+        </footer>
+</body>
+</html>

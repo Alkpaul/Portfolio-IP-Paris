@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueilEN.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Main page</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                  •   Best portfolio in the world !!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="accueilEN.html">EN</a>
+            <a href="accueil.html">FR</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="bubble-container">
+            <div class="bubble large" onclick="ouvrirPopup()" style="cursor: pointer;">
+                <a href="javascript:void(0)">
+                    <img src="CV_photo.jpg" alt="My CV">
+                    My CV
+                </a>
+            </div>
+            <div class="small-bubbles-container">
+                <div class="small-bubbles-row">
+                    <div class="bubble small">
+                        <a href="menuprojetsEN.html">
+                            <img src="programmation.jpg" alt="Programmation projects">
+                            Programmation projects
+                        </a>
+                    </div>
+                    <div class="bubble small" onclick="ouvrirPopupProjet()" style="cursor: pointer;">
+                        <a href="javascript:void(0)">
+                            <img src="progillu/avenirpro.jpg" alt="Professionnals projects">
+                            Professionnals projects
+                        </a>
+                    </div>
+                </div>
+                <div class="bubble minecraft">
+                    <a href="minecraftpageEN.html">
+                        <img src="minecraftimageaccueil.png" alt="Minecraft projects">
+                        Minecraft projects
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup CV -->
+        <div id="popup" class="popup">
+            <div class="popup-contenu">
+                <span class="fermer" onclick="fermerPopup()">×</span>
+                <h2>My CV that I need to translate</h2>
+                <iframe src="Paul_BRIAND_CV (2).pdf" class="cv-pdf" title="CV Paul Briand"></iframe>
+            </div>
+        </div>
+
+        <!-- Popup Professionnals projects -->
+        <div id="popup-projet" class="popup">
+            <div class="popup-contenu">
+                <span class="fermer" onclick="fermerPopupProjet()">×</span>
+                <h2>My Professional Project that I need to traduce</h2>
+                <iframe src="Projet_pro_portfolio_IPPARIS- Paul.pdf" class="cv-pdf" title="Professional Project"></iframe>
+            </div>
+        </div>
+
+        <div class="expandable-container">
+            <div class="expandable">
+                <div class="expandable-header" onclick="toggleExpandable(this)">
+                    <h2>My motivations <span class="indicator">▼</span></h2>
+                </div>
+                <div class="expandable-content">
+                    <p>
+The purpose of this page is simple: to show you, in a more personal way than in a cover letter, why I am applying to the Master’s in Data & AI at IP Paris.
+I am passionate about artificial intelligence and want to specialize in it, particularly in its applications to embedded systems and robotics. I am eager to learn, love taking on challenges, and am determined to go far.
+                    </p>
+<p> me tell you about my rather unconventional path: </p>
+<p>I started with a bachelor’s degree in cybersecurity, which I left because it didn’t suit me. It was not stimulating enough and too rigid. So, I chose to restart in an integrated preparatory program (through a mid-year intake) to take the time to explore what I truly enjoyed in engineering.
+Applied mathematics and coding quickly stood out as the two fields in which I truly excelled.</p>
+<p>These are the areas where I feel most at home today. And my grades reflect that, a steady progression since my restart: an average of 12, then 13, and now 15. This growth is the result of my curiosity, excellent teachers, and a strong drive to improve and learn.
+</p>
+<p>I believe IP Paris is looking for students with non-traditional backgrounds, creative and original thinkers, individuals who bring something more: commitment, ideas, and personality. That’s what I hope to bring to the table.
+In my mind, IP Paris is a place where ideas move fast, where curious and unconventional profiles are welcomed. That’s the kind of environment I’m looking for, and where I feel ready to fully commit myself.
+</p>
+<p>I am convinced that the Institut Polytechnique can give me the means to go very far.
+I am ready to engage enthusiastically in this adventure.</p>
+
+<p>Thank you sincerely for taking the time to explore this portfolio, in addition to my cover letter.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 My Portfolio. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        function ouvrirPopup() {
+            document.getElementById('popup').classList.add('active');
+        }
+
+        function fermerPopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
+
+        function ouvrirPopupProjet() {
+            document.getElementById('popup-projet').classList.add('active');
+        }
+
+        function fermerPopupProjet() {
+            document.getElementById('popup-projet').classList.remove('active');
+        }
+
+        // Close popups when clicking outside
+        window.onclick = function(event) {
+            const popupCV = document.getElementById('popup');
+            const popupProjet = document.getElementById('popup-projet');
+            if (event.target === popupCV) {
+                fermerPopup();
+            } else if (event.target === popupProjet) {
+                fermerPopupProjet();
+            }
+        }
+
+        function toggleExpandable(element) {
+            const container = element.closest('.expandable');
+            container.classList.toggle('active');
+        }
+
+        // Optional: Close expandable when clicking outside
+        document.addEventListener('click', function(event) {
+            const expandables = document.querySelectorAll('.expandable');
+            expandables.forEach(expandable => {
+                if (!expandable.contains(event.target)) {
+                    expandable.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="icon" type="image/png" href="pouce.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="accueil.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <h2>Page d'accueil</h2>
+            </a>
+        </div>
+
+        <div class="ticker">
+            <div class="ticker-content">
+                  •   Le meilleur portfolio au monde !!!   •                         •   🔥🔥🔥🔥🔥🔥🔥🔥🔥   •
+            </div>
+        </div>
+
+        <div class="auth-buttons">
+            <a href="projetsprogrammationEN.html">EN</a>
+            <a href="projetsprogrammation.html">FR</a>
+        </div>
+    </header>
+    <main class="project-container">
+        <h1 class="project-title">Projet : Collision entre 2 carrés</h1>
+        
+        <!-- Section Présentation -->
+        <section class="project-section">
+            <h2>Le but du projet :</h2>
+            <div class="text-content">
+                <p>Sur un affichage 2D, 2 carrés ayant une vitesse, un poids et une taille donnée (la taille est définie en fonction du poids), s'entrechoqueront. Le but de se projet est de regarder la physique (en ignorant les frottements) qui se cache derrière la collision de 2 carrés.</p>
+            </div>
+        </section>
+
+        <!-- Galerie Média -->
+        <section class="project-section">
+            <h2>Démonstration Visuelle</h2>
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="progillu/collision2carres1.png" alt="Illustration du code">
+                </div>
+                <div class="media-item">
+                    <img src="progillu/collision2carres2.png" alt="Illustration du code">
+                </div>
+                <div class="media-item">
+                    <img src="progillu/collision2carres3.png" alt="Illustration du code">
+                </div>
+                <div class="media-item video-wrapper">
+                    <video controls muted poster="progillu/2025-05-07 15-49-15.mkv">
+                        <source src="progillu/2025-05-07 15-49-15.mkv">
+                        Votre navigateur ne supporte pas les vidéos HTML5.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Algorithme -->
+        <section class="project-section">
+            <h2>Structure Algorithmique</h2>
+            <div class="pseudocode">
+                <pre>
+Fonction principal()
+// Demander les infos de base Demander poids et vitesse du carré1 Demander poids et vitesse du carré2
+// Placer les carrés Mettre carré1 à une position Mettre carré2 à une autre position
+// Boucle principale Tant que le programme tourne Si l'utilisateur veut arrêter, quitter
+
+// Bouger les carrés
+Déplacer carré1 avec sa vitesse
+Déplacer carré2 avec sa vitesse
+
+// Gérer les murs
+Si carré1 touche un mur, inverser sa vitesse
+Si carré2 touche un mur, inverser sa vitesse
+
+// Gérer la collision
+Si carré1 et carré2 se touchent
+    Changer leurs vitesses
+    Compter une collision
+Fin Si
+
+// Montrer à l'écran
+Dessiner les carrés et le nombre de collisions
+                </pre>
+            </div>
+        </section>
+
+    </main>
+        <footer>
+            <p>© 2025 Mon Portfolio. Tous droits réservés.</p>
+        </footer>
+</body>
+</html>
